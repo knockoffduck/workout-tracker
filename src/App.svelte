@@ -16,9 +16,12 @@
 <main>
 	<AddExerciseForm {addExercise} />
 	<ul>
-		{#each exercises as { title, completed }, i}
-			<li>
-				{title}
+		{#each exercises as exercise}
+			<li
+				class:doneon:click={() =>
+					(exercise.completed = !exercise.completed)}
+			>
+				{exercise.title}
 			</li>
 		{/each}
 	</ul>
@@ -37,6 +40,9 @@
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
+	}
+
+	.done {
 	}
 
 	@media (min-width: 640px) {

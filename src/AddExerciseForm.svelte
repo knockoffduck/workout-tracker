@@ -11,7 +11,6 @@
 
 <form on:submit|preventDefault={formSubmitted}>
     <h2>Workout Routine</h2>
-    <h4>{newExercise}</h4>
     <label>
         <input bind:value={newExercise} placeholder="Enter an Exercise..." />
     </label>
